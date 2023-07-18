@@ -4,4 +4,5 @@ res://levels/main_level.tscn
 res://levels/test_room.tscn
 res://UI/score/score_ui.tscn
 res://player/player.tscn
-res://player/gun/laser.tscn
+res://player/gun/gun.gd
+res://player/player.gd

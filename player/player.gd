@@ -78,6 +78,7 @@ func hitscan():
 			$cam/laser.visible = true
 			$cam/gun/laser_timer.start()
 			$cam/gun/shoot.play()
+			$cam/gun/shoot.pitch_scale += 0.1
 			$cam/gun/AnimationPlayer.play("shoot")
 			gun.bullets -= 1
 		else:

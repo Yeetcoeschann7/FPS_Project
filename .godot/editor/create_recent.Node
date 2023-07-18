@@ -1,8 +1,8 @@
+AudioStreamPlayer
 Timer
 MeshInstance3D
 Node3D
 OmniLight3D
-AudioStreamPlayer
 Label
 AnimationPlayer
 GPUParticles3D

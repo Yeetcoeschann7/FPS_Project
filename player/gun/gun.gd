@@ -15,5 +15,7 @@ func _process(_delta):
 	else:
 		animplaying = false
 	if Input.is_action_pressed("reload") and !animplaying:
+		$reload.play()
 		$AnimationPlayer.play("reload")
+		$shoot.pitch_scale = 0.8
 		bullets = 6

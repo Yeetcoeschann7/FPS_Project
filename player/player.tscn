@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5u2trpptd0nk"]
+[gd_scene load_steps=16 format=3 uid="uid://b5u2trpptd0nk"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_4i6re"]
 [ext_resource type="Texture2D" uid="uid://v5habofwvqhu" path="res://images/crosshair.png" id="2_yl2ns"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://p0amx1avpykq" path="res://audio/shoot.wav" id="3_yyoil"]
 [ext_resource type="AudioStream" uid="uid://ccsn5r7oho6bq" path="res://audio/170272__knova__gun-click.wav" id="5_5wqd5"]
 [ext_resource type="PackedScene" uid="uid://b86c6rfryl2tq" path="res://player/gun/laser.tscn" id="6_4alui"]
+[ext_resource type="AudioStream" uid="uid://cgc61awit5ask" path="res://audio/reload.wav" id="7_65oj5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_orege"]
 
@@ -99,9 +100,13 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.888768, -0.569782, -0
 
 [node name="shoot" type="AudioStreamPlayer" parent="cam/gun"]
 stream = ExtResource("3_yyoil")
+pitch_scale = 0.8
 
 [node name="click" type="AudioStreamPlayer" parent="cam/gun"]
 stream = ExtResource("5_5wqd5")
+
+[node name="reload" type="AudioStreamPlayer" parent="cam/gun"]
+stream = ExtResource("7_65oj5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cam/gun"]
 libraries = {
