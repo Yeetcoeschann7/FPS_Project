@@ -6,3 +6,4 @@ res://UI/score/score_ui.tscn
 res://player/player.tscn
 res://player/gun/gun.gd
 res://player/player.gd
+res://UI/pause_menu/pause_menu.tscn
