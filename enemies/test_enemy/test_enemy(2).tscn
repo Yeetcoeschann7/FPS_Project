@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkc5sf3xhq81"]
+
+[ext_resource type="AudioStream" uid="uid://cht2e4k8rxsgy" path="res://audio/spawn.wav" id="2_wcwwn"]
+[ext_resource type="AudioStream" uid="uid://bmpf3ugv5u0hw" path="res://audio/458563__gis_sweden__electronic-minute-no-235-indeterminable-hum.wav" id="3_ikh3y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7iuth"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv8oc"]
+albedo_color = Color(0.827451, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.862745, 0, 0, 1)
+emission_energy_multiplier = 4.34
+disable_receive_shadows = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_nh6x3"]
+material = SubResource("StandardMaterial3D_xv8oc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6a78v"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eoo6i"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+disable_receive_shadows = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_0vomn"]
+material = SubResource("StandardMaterial3D_eoo6i")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="test_enemy" type="CharacterBody3D"]
+
+[node name="collider" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7iuth")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="collider"]
+mesh = SubResource("BoxMesh_nh6x3")
+
+[node name="spawn" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_wcwwn")
+
+[node name="step" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_ikh3y")
+volume_db = 3.0
+max_distance = 15.0
+panning_strength = 2.5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0748901, 0)
+amount = 50
+lifetime = 2.0
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_6a78v")
+draw_pass_1 = SubResource("BoxMesh_0vomn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.224116, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 3.0
+light_volumetric_fog_energy = 7.0

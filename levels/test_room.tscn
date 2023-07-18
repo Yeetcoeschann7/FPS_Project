@@ -1,0 +1,133 @@
+[gd_scene load_steps=20 format=3 uid="uid://du27yxk355fvp"]
+
+[ext_resource type="Texture2D" uid="uid://boubns1wdwl1q" path="res://materials/pipes/Sci-fi_Pipes_001_basecolor.jpg" id="1_kbbwe"]
+[ext_resource type="Texture2D" uid="uid://j5iecpy6wc8m" path="res://materials/pipes/Sci-fi_Pipes_001_metallic.jpg" id="2_gb0ni"]
+[ext_resource type="Texture2D" uid="uid://bebv7gg813etr" path="res://materials/pipes/Sci-fi_Pipes_001_normal.jpg" id="3_0uq2h"]
+[ext_resource type="Texture2D" uid="uid://dxadnj68jk216" path="res://materials/pipes/Sci-fi_Pipes_001_roughness.jpg" id="4_qbroy"]
+[ext_resource type="PackedScene" uid="uid://b5u2trpptd0nk" path="res://player/player.tscn" id="5_sgbxf"]
+[ext_resource type="PackedScene" uid="uid://duytagge17lkj" path="res://UI/pause_menu/pause_menu.tscn" id="6_0orpg"]
+[ext_resource type="PackedScene" uid="uid://bvwxnrqmhfdyv" path="res://UI/score/score_ui.tscn" id="7_wohwy"]
+[ext_resource type="AudioStream" uid="uid://crjvhxnwlmxo" path="res://audio/393489__sirplus__denseintenseloop16.wav" id="8_aabbo"]
+[ext_resource type="PackedScene" uid="uid://bkc5sf3xhq81" path="res://enemies/test_enemy/test_enemy(2).tscn" id="9_w3ecc"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_dvhkm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43pkp"]
+albedo_texture = ExtResource("1_kbbwe")
+metallic = 1.0
+metallic_texture = ExtResource("2_gb0ni")
+roughness_texture = ExtResource("4_qbroy")
+normal_enabled = true
+normal_texture = ExtResource("3_0uq2h")
+uv1_scale = Vector3(500, 500, 500)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gym26"]
+material = SubResource("StandardMaterial3D_43pkp")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g3wj4"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_7rrh5"]
+sky_material = SubResource("ProceduralSkyMaterial_g3wj4")
+
+[sub_resource type="Environment" id="Environment_jfeww"]
+background_mode = 2
+sky = SubResource("Sky_7rrh5")
+fog_light_color = Color(0, 0, 0, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.513726, 0.513726, 0.513726, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rug1a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evwa5"]
+albedo_texture = ExtResource("1_kbbwe")
+metallic = 1.0
+metallic_texture = ExtResource("2_gb0ni")
+roughness_texture = ExtResource("4_qbroy")
+normal_enabled = true
+normal_texture = ExtResource("3_0uq2h")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xw5lg"]
+material = SubResource("StandardMaterial3D_evwa5")
+flip_faces = true
+size = Vector3(100, 100, 100)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_auuc3"]
+data = PackedVector3Array(50, 50, 50, -50, 50, 50, -50, -50, 50, 50, -50, 50, 50, 50, 50, -50, -50, 50, -50, 50, -50, 50, 50, -50, 50, -50, -50, -50, -50, -50, -50, 50, -50, 50, -50, -50, 50, 50, -50, 50, 50, 50, 50, -50, 50, 50, -50, -50, 50, 50, -50, 50, -50, 50, -50, 50, 50, -50, 50, -50, -50, -50, -50, -50, -50, 50, -50, 50, 50, -50, -50, -50, -50, 50, 50, 50, 50, 50, 50, 50, -50, -50, 50, -50, -50, 50, 50, 50, 50, -50, 50, -50, 50, -50, -50, 50, -50, -50, -50, 50, -50, -50, 50, -50, 50, -50, -50, -50)
+
+[node name="test_room" type="Node3D"]
+
+[node name="ground" type="StaticBody3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+
+[node name="ground_collider" type="CollisionShape3D" parent="ground"]
+shape = SubResource("WorldBoundaryShape3D_dvhkm")
+
+[node name="ground_mesh" type="MeshInstance3D" parent="ground/ground_collider"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_gym26")
+
+[node name="player" parent="." instance=ExtResource("5_sgbxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10923, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.40927, 0.912413, 0, -0.912413, 0.40927, 0, 8.21765, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jfeww")
+
+[node name="pause_menu" parent="." instance=ExtResource("6_0orpg")]
+
+[node name="score_ui" parent="." instance=ExtResource("7_wohwy")]
+metadata/_edit_use_anchors_ = true
+
+[node name="origin" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.884986, 0)
+visible = false
+mesh = SubResource("CylinderMesh_rug1a")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_aabbo")
+autoplay = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30.7821, 0)
+mesh = SubResource("BoxMesh_xw5lg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_auuc3")
+
+[node name="test_enemy" parent="." instance=ExtResource("9_w3ecc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51229, -14.5283)
+
+[node name="test_enemy2" parent="." instance=ExtResource("9_w3ecc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.66364, 1.51229, -15.7831)
+
+[node name="test_enemy3" parent="." instance=ExtResource("9_w3ecc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.24719, 0.803248, -20.8542)
+
+[node name="test_enemy4" parent="." instance=ExtResource("9_w3ecc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23272, 3.4147, -20.8542)
+
+[node name="test_enemy5" parent="." instance=ExtResource("9_w3ecc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16306, 3.4147, -29.06)
+
+[node name="test_enemy6" parent="." instance=ExtResource("9_w3ecc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.40732, 1.85831, -21.1879)
+
+[node name="test_enemy7" parent="." instance=ExtResource("9_w3ecc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87443, 3.76564, -15.8123)
+
+[node name="test_enemy8" parent="." instance=ExtResource("9_w3ecc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0173, 1.89359, -15.8123)
+
+[node name="test_enemy9" parent="." instance=ExtResource("9_w3ecc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0173, 5.50846, -20.0514)
+
+[node name="test_enemy10" parent="." instance=ExtResource("9_w3ecc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89185, 2.85767, -23.9306)

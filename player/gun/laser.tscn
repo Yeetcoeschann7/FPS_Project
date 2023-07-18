@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b86c6rfryl2tq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cew4"]
+transparency = 1
+albedo_color = Color(0, 1, 0.2, 1)
+emission_enabled = true
+emission = Color(0, 0.596078, 0, 1)
+emission_energy_multiplier = 16.0
+disable_receive_shadows = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_5y0ga"]
+material = SubResource("StandardMaterial3D_5cew4")
+
+[node name="laser" type="Node3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 300, 0, 0, -0.00618413)
+
+[node name="path" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+mesh = SubResource("BoxMesh_5y0ga")

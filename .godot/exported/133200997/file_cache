@@ -1,0 +1,11 @@
+res://enemies/test_enemy/test_enemy(2).tscn::91834b768b2d5849c3e4960b765cb538::1689541292::res://.godot/exported/133200997/export-0d1c53c7211bb389af7b15ac2b5aa155-test_enemy(2).scn
+res://enemies/test_enemy/test_enemy.tscn::b2b8f5487ac88c0bb834549b056119c3::1689541292::res://.godot/exported/133200997/export-11b79b88f3f9bfcaf3023f92bff8c5b1-test_enemy.scn
+res://enemies/test_enemy/test_enemy_spawner.tscn::a929f39c45fb8f8ed320a6a8802d99d0::1689541292::res://.godot/exported/133200997/export-1566b353e0cab904ecde40b1e72b6580-test_enemy_spawner.scn
+res://levels/main_level.tscn::2b1707157b99eaf1842f542a7de50210::1689541292::res://.godot/exported/133200997/export-6efb9bf2c17f7a7a9ce6dabc081e1bd9-main_level.scn
+res://levels/test_room.tscn::754307d9be72b0620790412e30bc4f37::1689541366::res://.godot/exported/133200997/export-b337eab62518604ac4e00a325877be85-test_room.scn
+res://materials/dry_ground_01_4k/main_level.tres::12ac31b39ff266439f0a76f193d1c711::1689526048::res://.godot/exported/133200997/export-b41bcf477ad36f6c508f809f9bba2621-main_level.res
+res://player/gun/gun.tscn::2056b697abb4cc7e4050856c7cb1ec33::1689541292::res://.godot/exported/133200997/export-3c1abda71779b1e7eeb911e2d4e44e1c-gun.scn
+res://player/player.tscn::b79d55df411ebb4cabb0e7c0af9f3c02::1689541292::res://.godot/exported/133200997/export-753d15e03e0182f9d550ac833b42bb41-player.scn
+res://UI/death_menu/death_menu.tscn::7471ee54a5409de57032c7baf7c26d3b::1689541292::res://.godot/exported/133200997/export-e0d3e9828659d8efc755d6b673db8c25-death_menu.scn
+res://UI/pause_menu/pause_menu.tscn::61164579d7295442511092947b18c7d9::1689541292::res://.godot/exported/133200997/export-b6fcfece989167fd05c40fcd77d3d643-pause_menu.scn
+res://UI/score/score_ui.tscn::6122baba91a28cc75cfce688682409d7::1689541292::res://.godot/exported/133200997/export-ed9a8498c6618d8a8be99712d499db62-score_ui.scn

@@ -1,0 +1,7 @@
+res://enemies/test_enemy/test_enemy.tscn
+res://player/gun/gun.tscn
+res://levels/main_level.tscn
+res://levels/test_room.tscn
+res://UI/score/score_ui.tscn
+res://player/player.tscn
+res://player/gun/laser.tscn

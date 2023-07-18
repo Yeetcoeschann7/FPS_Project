@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvwxnrqmhfdyv"]
+
+[ext_resource type="Script" path="res://score_ui.gd" id="1_1dbjs"]
+
+[node name="score_ui" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1dbjs")
+
+[node name="score_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 22.0
+offset_right = 190.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 50
+text = "Score: "
+
+[node name="score" type="Label" parent="score_label"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 2.0
+offset_right = 303.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 50
+text = "00000"
+
+[node name="ammo_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1584.0
+offset_top = 925.0
+offset_right = 1872.0
+offset_bottom = 997.0
+theme_override_font_sizes/font_size = 50
+text = "Ammo:     /6"
+
+[node name="ammo" type="Label" parent="ammo_label"]
+layout_mode = 0
+offset_left = 203.0
+offset_right = 243.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 50
+text = "6"

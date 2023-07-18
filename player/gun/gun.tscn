@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://docwyyeakbukv"]
+
+[ext_resource type="PackedScene" uid="uid://dc2ur6lyaciyn" path="res://3d_models/gun.glb" id="1_cp1vx"]
+[ext_resource type="Script" path="res://player/gun/gun.gd" id="2_owxa4"]
+
+[node name="gun" instance=ExtResource("1_cp1vx")]
+script = ExtResource("2_owxa4")

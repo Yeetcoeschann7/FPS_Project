@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://duytagge17lkj"]
+
+[ext_resource type="Script" path="res://UI/pause_menu/pause_menu.gd" id="1_1338j"]
+
+[node name="pause_menu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("ColorRect/quit")
+focus_neighbor_right = NodePath("ColorRect/resume")
+script = ExtResource("1_1338j")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 654.0
+scale = Vector2(1.66903, 1.55652)
+color = Color(0.337255, 0.337255, 0.337255, 0.835294)
+
+[node name="resume" type="Button" parent="ColorRect"]
+process_mode = 3
+layout_mode = 0
+offset_left = 638.0
+offset_top = 230.0
+offset_right = 1086.0
+offset_bottom = 375.0
+theme_override_font_sizes/font_size = 100
+text = " Resume "
+
+[node name="quit" type="Button" parent="ColorRect"]
+process_mode = 3
+layout_mode = 0
+offset_left = 85.0
+offset_top = 230.0
+offset_right = 354.0
+offset_bottom = 375.0
+theme_override_font_sizes/font_size = 100
+text = " Quit "
+
+[connection signal="pressed" from="ColorRect/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ColorRect/quit" to="." method="_on_quit_pressed"]
