@@ -1,21 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://docwyyeakbukv"]
+[gd_scene load_steps=4 format=3 uid="uid://docwyyeakbukv"]
 
 [ext_resource type="PackedScene" uid="uid://dc2ur6lyaciyn" path="res://3d_models/gun.glb" id="1_cp1vx"]
 [ext_resource type="Script" path="res://player/gun/gun.gd" id="2_owxa4"]
-[ext_resource type="Texture2D" uid="uid://dguhcygnn00qs" path="res://images/gun_texture.png" id="3_ecfti"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqcf0"]
-albedo_texture = ExtResource("3_ecfti")
-metallic = 1.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1futs"]
-albedo_texture = ExtResource("3_ecfti")
+[ext_resource type="Material" uid="uid://c1dh6277wkgqf" path="res://materials/gun_material.tres" id="3_xrxc3"]
 
 [node name="gun" instance=ExtResource("1_cp1vx")]
 script = ExtResource("2_owxa4")
 
 [node name="Cube001" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_rqcf0")
+surface_material_override/0 = ExtResource("3_xrxc3")
 
 [node name="Cylinder" parent="." index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_1futs")
+transform = Transform3D(1.7, 0, 0, 0, 0, -1.7, 0, 1.2, 0, 0.00787735, 1.24657, -2.68174)
+surface_material_override/0 = ExtResource("3_xrxc3")

@@ -1,5 +1,15 @@
 extends Control
 
+func _ready():
+	if Score.particles == false:
+		$ColorRect/GridContainer/particle_button.button_pressed = true
+	else:
+		$ColorRect/GridContainer/particle_button.button_pressed = false
+	if Score.lights == false:
+		$ColorRect/GridContainer/light_button.button_pressed = true
+	else:
+		$ColorRect/GridContainer/light_button.button_pressed = false
+
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://UI/main_menu/main_menu.tscn");
 
@@ -19,22 +29,14 @@ func _on_window_mode_picker_item_selected(index):
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 
-func _on_fog_button_pressed():
-	if $ColorRect/GridContainer/particle_button.button_down:
-		Score.fog = false
-	else:
-		Score.fog = true
-	print($ColorRect/GridContainer/particle_button.button_pressed)
-	print(Score.fog)
-
 func _on_particle_button_pressed():
-	if $ColorRect/GridContainer/particle_button.button_down:
+	if $ColorRect/GridContainer/particle_button.button_pressed:
 		Score.particles = false
 	else:
 		Score.particles = true
 
 func _on_light_button_pressed():
-	if $ColorRect/GridContainer/light_button.button_down:
+	if $ColorRect/GridContainer/light_button.button_pressed:
 		Score.lights = false
 	else:
 		Score.lights = true
