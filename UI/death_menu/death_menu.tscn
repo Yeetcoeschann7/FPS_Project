@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8syihwfdmq7i"]
+[gd_scene load_steps=2 format=3 uid="uid://bpd7j3mgor8t1"]
 
-[ext_resource type="Script" path="res://UI/death_menu/death_menu.gd" id="1_a6c42"]
-[ext_resource type="AudioStream" uid="uid://c20bmh0a5j5yh" path="res://audio/350984__cabled_mess__lose_c_03.wav" id="2_pctqo"]
+[ext_resource type="Script" path="res://UI/death_menu/death_menu.gd" id="1_yj6ej"]
 
 [node name="death_menu" type="Control"]
 layout_mode = 3
@@ -10,58 +9,61 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_a6c42")
-
-[node name="lose" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_pctqo")
-autoplay = true
+script = ExtResource("1_yj6ej")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1155.0
-offset_bottom = 654.0
-scale = Vector2(1.66903, 1.55652)
-color = Color(0.337255, 0.337255, 0.337255, 0.835294)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.254902, 0.254902, 0.254902, 1)
 
-[node name="death_label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 176.749
-offset_top = 7.06705
-offset_right = 909.749
-offset_bottom = 242.067
-theme_override_colors/font_color = Color(0.341176, 0, 0, 1)
-theme_override_font_sizes/font_size = 130
-text = "Game Over!
-"
+offset_left = 304.0
+offset_top = 30.0
+offset_right = 1221.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 200
+text = "You Died!"
 
 [node name="score_label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 230.673
-offset_top = 214.581
-offset_right = 606.673
-offset_bottom = 354.581
+offset_left = 34.0
+offset_top = 291.0
+offset_right = 354.0
+offset_bottom = 431.0
+theme_override_font_sizes/font_size = 75
+text = "Score: "
+
+[node name="hiscore_label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 416.0
+offset_right = 603.0
+offset_bottom = 556.0
+theme_override_font_sizes/font_size = 75
+text = "High Score: "
+
+[node name="quit" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 625.0
+offset_right = 487.0
+offset_bottom = 770.0
 theme_override_font_sizes/font_size = 100
-text = "Score:"
+text = "  Quit  "
 
 [node name="restart" type="Button" parent="ColorRect"]
-process_mode = 3
 layout_mode = 0
-offset_left = 662.045
-offset_top = 444.581
-offset_right = 1110.04
-offset_bottom = 589.581
+offset_left = 993.0
+offset_top = 625.0
+offset_right = 1455.0
+offset_bottom = 770.0
 theme_override_font_sizes/font_size = 100
-text = " Restart"
+text = "  Restart  "
 
-[node name="quit" type="Button" parent="ColorRect" groups=["death_menu"]]
-process_mode = 3
-layout_mode = 0
-offset_left = 109.045
-offset_top = 444.581
-offset_right = 378.045
-offset_bottom = 589.581
-theme_override_font_sizes/font_size = 100
-text = " Quit "
-
-[connection signal="pressed" from="ColorRect/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="ColorRect/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ColorRect/restart" to="." method="_on_restart_pressed"]

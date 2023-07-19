@@ -30,12 +30,30 @@ offset_bottom = 74.0
 theme_override_font_sizes/font_size = 50
 text = "00000"
 
+[node name="hiscore_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 865.0
+offset_top = 22.0
+offset_right = 1151.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 50
+text = "High Score: "
+
+[node name="hiscore" type="Label" parent="hiscore_label"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 2.0
+offset_right = 429.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 50
+text = "00000"
+
 [node name="ammo_label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1584.0
-offset_top = 925.0
-offset_right = 1872.0
-offset_bottom = 997.0
+offset_left = 1293.0
+offset_top = 814.0
+offset_right = 1581.0
+offset_bottom = 886.0
 theme_override_font_sizes/font_size = 50
 text = "Ammo:     /6"
 

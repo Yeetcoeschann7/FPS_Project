@@ -7,6 +7,14 @@ var target_pos
 var speed = 3
 
 func _ready():
+		if Score.particles == false:
+			$GPUParticles3D.emitting = false
+		else:
+			$GPUParticles3D.emitting = true
+		if Score.lights == false:
+			$OmniLight3D.visible = false
+		else:
+			$OmniLight3D.visible = true
 		player_pos = player.position
 		var x = randf_range(player.position.x - 40, player.position.x + 40)
 		var z = randf_range(player.position.z - 40, player.position.z + 40)

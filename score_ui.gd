@@ -12,4 +12,7 @@ func _ready():
 func _process(_delta):
 	$score_label/score.text = str(Score.score)
 	$ammo_label/ammo.text = str(gun.bullets)
+	if Score.score > Score.hiscore:
+		Score.hiscore = Score.score
+	$hiscore_label/hiscore.text = str(Score.hiscore)
 	

@@ -14,8 +14,10 @@ func set_is_paused(value):
 		$ColorRect/resume.grab_focus()
 
 func _on_resume_pressed():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	self.is_paused = false
 
 func _on_quit_pressed():
 	self.is_paused = false
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://UI/main_menu/main_menu.tscn");

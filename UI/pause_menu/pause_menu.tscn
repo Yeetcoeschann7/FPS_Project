@@ -16,28 +16,42 @@ script = ExtResource("1_1338j")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1294.0
-offset_bottom = 872.0
+offset_right = 1600.0
+offset_bottom = 900.0
 scale = Vector2(1.66903, 1.55652)
 color = Color(0.337255, 0.337255, 0.337255, 0.835294)
 
 [node name="resume" type="Button" parent="ColorRect"]
 process_mode = 3
-layout_mode = 0
-offset_left = 638.0
-offset_top = 230.0
-offset_right = 1086.0
-offset_bottom = 375.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -777.232
+offset_top = -227.709
+offset_right = -329.232
+offset_bottom = -82.7092
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 text = " Resume "
 
 [node name="quit" type="Button" parent="ColorRect"]
 process_mode = 3
-layout_mode = 0
-offset_left = 85.0
-offset_top = 230.0
-offset_right = 354.0
-offset_bottom = 375.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.517
+offset_top = -229.637
+offset_right = 115.483
+offset_bottom = -84.6367
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 text = " Quit "
 

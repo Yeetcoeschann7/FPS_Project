@@ -117,6 +117,7 @@ libraries = {
 wait_time = 0.05
 
 [node name="kill_box" type="Area3D" parent="."]
+transform = Transform3D(1.19052, 0, 0, 0, 1.1119, 0, 0, 0, 1.23513, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="kill_box"]
 shape = SubResource("CapsuleShape3D_40kw8")
