@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://8drhlft5sy02"]
+[gd_scene load_steps=3 format=3 uid="uid://d0jwksdtwdb03"]
 
-[ext_resource type="Script" path="res://test_enemy_spawner.gd" id="1_awbat"]
+[ext_resource type="Script" path="res://enemies/spawners/test_enemy_spawner.gd" id="1_w77oe"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_7mccc"]
 radius = 0.167
 height = 0.3
 
 [node name="test_enemy_spawner" type="Node3D"]
-script = ExtResource("1_awbat")
+script = ExtResource("1_w77oe")
 
 [node name="spawn_timer" type="Timer" parent="."]
 wait_time = 3.0

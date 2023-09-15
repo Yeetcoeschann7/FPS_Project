@@ -1,4 +1,6 @@
+res://enemies
 res://materials
+res://enemies/spawners
 res://UI/main_menu
 res://UI/themes
 D:/
@@ -8,7 +10,6 @@ D:/FPS_Project
 res://UI/score
 res://UI/death_menu
 res://enemies/test_enemy
-res://enemies
 res://player
 res://levels
 res://

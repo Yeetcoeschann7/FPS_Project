@@ -8,13 +8,13 @@ var minLookAngle : float = -90.0
 var maxLookAngle : float = 90.0
 var lookSensitivity : float = 10
 var mouseDelta = 0
-var scl = 1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _ready():
+	print(global_position)
 	# hide and lock the mouse cursor
 	Engine.max_fps = 120
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
@@ -64,15 +64,14 @@ func _input(event):
 func hitscan():
 	if $cam/crosshair/hitscan.is_colliding():
 		var enemy = $cam/crosshair/hitscan.get_collider()
-		if $cam/crosshair/hitscan.get_collider().is_in_group("enemy"):
-			$cam/crosshair.mesh.material.albedo_color = Color(255, 255, 255)
+		if enemy.is_in_group("enemy"):
+			$cam/crosshair.mesh.material.albedo_color = Color(0, 255, 0)
 			if Input.is_action_just_pressed("shoot") and !gun.animplaying and gun.bullets >= 1:
-				enemy.take_damage()
+				enemy.take_damage(5)
 		else:
-			scl = 1
-			$cam/crosshair.mesh.material.albedo_color = Color(0, 0, 255)
+			$cam/crosshair.mesh.material.albedo_color = Color(255, 255, 255)
 	else:
-		$cam/crosshair.mesh.material.albedo_color = Color(0, 0, 255)
+		$cam/crosshair.mesh.material.albedo_color = Color(255, 255, 255)
 	if Input.is_action_just_pressed("shoot") and !gun.animplaying:
 		if gun.bullets >= 1:
 			$cam/laser.visible = true

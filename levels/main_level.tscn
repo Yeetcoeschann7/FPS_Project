@@ -1,12 +1,12 @@
 [gd_scene load_steps=16 format=3 uid="uid://bx0p14av3e0wh"]
 
 [ext_resource type="PackedScene" uid="uid://b5u2trpptd0nk" path="res://player/player.tscn" id="2_1c4i1"]
-[ext_resource type="PackedScene" uid="uid://8drhlft5sy02" path="res://enemies/test_enemy/test_enemy_spawner.tscn" id="4_p4xqw"]
 [ext_resource type="PackedScene" uid="uid://duytagge17lkj" path="res://UI/pause_menu/pause_menu.tscn" id="4_wj3cl"]
 [ext_resource type="AudioStream" uid="uid://crjvhxnwlmxo" path="res://audio/393489__sirplus__denseintenseloop16.wav" id="5_du6dm"]
 [ext_resource type="Script" path="res://levels/WorldEnvironment.gd" id="6_vavi4"]
 [ext_resource type="PackedScene" uid="uid://bvwxnrqmhfdyv" path="res://UI/score/score_ui.tscn" id="7_3bwns"]
 [ext_resource type="Texture2D" uid="uid://paj4vev8wpsv" path="res://images/grid_albedo.png" id="7_uwqim"]
+[ext_resource type="PackedScene" uid="uid://3f0ilc76lo27" path="res://enemies/wave_manager.tscn" id="8_2kwwi"]
 [ext_resource type="Texture2D" uid="uid://c42vcltuum2tx" path="res://images/grid_normal.png" id="8_fsww6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fpqlm"]
@@ -17,7 +17,6 @@ sky_horizon_color = Color(0, 0, 0, 1)
 sky_material = SubResource("ProceduralSkyMaterial_fpqlm")
 
 [sub_resource type="Environment" id="Environment_0ekot"]
-background_mode = 2
 sky = SubResource("Sky_15i3p")
 ambient_light_source = 2
 ambient_light_color = Color(0.32549, 0.32549, 0.32549, 1)
@@ -67,9 +66,6 @@ script = ExtResource("6_vavi4")
 [node name="score_ui" parent="." instance=ExtResource("7_3bwns")]
 metadata/_edit_use_anchors_ = true
 
-[node name="test_enemy_spawner" parent="." instance=ExtResource("4_p4xqw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.324207, 7.65836)
-
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_du6dm")
 autoplay = true
@@ -87,3 +83,5 @@ shape = SubResource("ConcavePolygonShape3D_jvsay")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_sjr3b")
+
+[node name="wave_manager" parent="." instance=ExtResource("8_2kwwi")]

@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkc5sf3xhq81"]
+[gd_scene load_steps=10 format=3 uid="uid://bkc5sf3xhq81"]
 
+[ext_resource type="Script" path="res://enemies/test_enemy/test_enemy(2).gd" id="1_7sv5p"]
 [ext_resource type="AudioStream" uid="uid://cht2e4k8rxsgy" path="res://audio/spawn.wav" id="2_wcwwn"]
 [ext_resource type="AudioStream" uid="uid://bmpf3ugv5u0hw" path="res://audio/458563__gis_sweden__electronic-minute-no-235-indeterminable-hum.wav" id="3_ikh3y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7iuth"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv8oc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_banrx"]
 albedo_color = Color(0.827451, 0, 0, 1)
 emission_enabled = true
 emission = Color(0.862745, 0, 0, 1)
@@ -13,7 +14,7 @@ emission_energy_multiplier = 4.34
 disable_receive_shadows = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_nh6x3"]
-material = SubResource("StandardMaterial3D_xv8oc")
+material = SubResource("StandardMaterial3D_banrx")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6a78v"]
 emission_shape = 3
@@ -31,7 +32,8 @@ disable_receive_shadows = true
 material = SubResource("StandardMaterial3D_eoo6i")
 size = Vector3(0.1, 0.1, 0.1)
 
-[node name="test_enemy" type="CharacterBody3D"]
+[node name="test_enemy" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_7sv5p")
 
 [node name="collider" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_7iuth")
